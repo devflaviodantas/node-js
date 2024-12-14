@@ -1,0 +1,69 @@
+<div class="header"></div>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<div class="container">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbarToggler10" aria-controls="myNavbarToggler10" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbarToggler10">
+			<ul class="navbar-nav justify-content-start">
+				<li class="nav-item">
+					<a class="nav-link<%= req.path === '/home' ? ' active' : '' %>" href="/home">
+						<img src="/images/icons/navbar/home.png" />
+						<span>Home</span>
+					</a>
+				</li>
+				<li class="nav-item<%= req.path === '/my-account' ? ' active' : '' %>">
+					<a class="nav-link" href="#">
+						<img src="/images/icons/navbar/user.png" />
+						<span>Conta</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link<%= req.path === '/donate' ? ' active' : '' %>" href="/donate">
+						<img src="/images/icons/navbar/donate.png" />
+						<span>Doação</span>
+						<% if (settings.bonus > 0) { %>
+						<span class="badge bg-primary">+<%= settings.bonus %>%</span>
+						<% } %>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link<%= req.path === '/support' ? ' active' : '' %>" href="#">
+						<img src="/images/icons/navbar/support.png" />
+						<span>Suporte</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<img src="/images/icons/navbar/store.png" />
+						<span>Loja</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<img src="/images/icons/navbar/more.png" />
+						<span>Mais</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">
+						<img src="/images/icons/navbar/logout.png" />
+						<span>Sair</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-nav ms-auto navbar-user">
+			<div class="row">
+				<div class="col-12 d-flex">
+					<img src="/images/icons/navbar/user.png" class="me-2 user-avatar align-self-start" alt="Profile" />
+					<div class="navbar-user-details">
+						<h5 class="mb-0"><%= req.session.user.login %></h5>
+						<p class="mb-0" data-toggle="tooltip" data-html="true" title="Gold"><img src="/images/icons/gold/1.png" /> 2000</p>
+						<p><img src="/images/diamond.gif" data-toggle="tooltip" data-html="true" title="Diamantes" /> <%= req.session.user.diamond %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

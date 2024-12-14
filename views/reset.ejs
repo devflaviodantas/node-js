@@ -1,0 +1,32 @@
+<%- include('template/header', { title: settings.server }) %>
+<div class="container">
+	<div class="offline">
+		<div class="page">
+			<div class="logo">
+				<a href="/"><img src="/images/logo-<%- settings.theme %>.png" id="logo" /></a>
+			</div>
+			<% if (!recover) { %> <%- include('template/messages') %> <% } if (recover) { %>
+			<form action="/recover/<%-login %>/<%-token %>" method="post" id="resetForm">
+				<p class="text-center m-0">Defina uma nova senha para sua conta</p>
+				<h3 class="text-center mb-3">@<%-login %></h3>
+
+				<div class="form-floating mb-3 position-relative">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Nova senha" autofocus />
+					<label for="password">Nova senha</label>
+					<span class="password-toggle"><i class="las la-lock"></i></span>
+				</div>
+
+				<div class="form-floating mb-3 position-relative">
+					<input type="password" class="form-control" name="confirm" id="confirm" placeholder="Repetir Nova Senha" />
+					<label for="confirm">Repetir Nova Senha</label>
+					<span class="password-toggle"><i class="las la-lock"></i></span>
+				</div>
+
+				<% if (recover) { %> <%- include('template/messages') %> <% } %>
+				<button type="submit" class="button btn btn-primary mt-2 mb-1">Alterar senha</button>
+			</form>
+			<% } %>
+		</div>
+	</div>
+</div>
+<%- include('template/footer') %>

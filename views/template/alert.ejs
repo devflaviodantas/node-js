@@ -1,0 +1,19 @@
+<% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+  <script>
+    Swal.fire({
+    title: '<%= typeof alert_title !== 'undefined' ? alert_title : '' %>',
+    html: `
+      <ul class="list-group list-group-flush">
+        <% errors.forEach(error => { %>
+          <li class="list-group-item"><%= error %></li>
+        <% }) %>
+      </ul>
+    `,
+    icon: '<%= typeof alert_type !== 'undefined' ? alert_type : 'error' %>',
+  }).then(() => {
+      <% if (typeof alert_redirect !== 'undefined' && alert_redirect) { %>
+        window.location.href = "<%= alert_redirect %>";
+      <% } %>
+      });
+  </script>
+<% } %>

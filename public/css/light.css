@@ -1,0 +1,101 @@
+a {
+	color: #000;
+}
+
+label {
+	color: #000;
+}
+
+.footer a {
+	color: #fff;
+}
+
+.content {
+	background-color: #fff;
+}
+
+.package {
+	background-color: #f0f0f0;
+	color: #000;
+}
+
+.package .diamond {
+	color: #007bff;
+}
+
+.package .gold {
+	color: #ffc107;
+}
+
+.page {
+	background: rgb(255, 255, 255, 0.9);
+}
+
+.link i {
+	color: #4e7ccd;
+}
+
+.link h6 {
+	color: #000;
+}
+
+.link p {
+	color: #666;
+}
+
+.link:hover {
+	border-bottom: 2px inset rgba(78, 124, 205, 0.5);
+	padding-left: 1px;
+	padding-top: 7px;
+}
+
+.password-toggle:hover {
+	color: #007bff;
+}
+
+.button {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.button:hover {
+	background-color: #0056b3;
+}
+
+.error-message {
+	color: #d9534f;
+}
+
+.email-warning {
+	color: #666;
+	border-bottom: 1px solid #666;
+}
+
+.reward {
+	color: #000;
+}
+
+.reward-qtd {
+	color: #fff;
+}
+
+.form-floating > label {
+	font-weight: 500;
+}
+
+.form-control {
+	background-color: rgba(255, 251, 251, 0.8);
+}
+
+.form-control:focus {
+	background-color: rgba(255, 251, 251, 0.9);
+	color: rgb(32, 32, 32);
+	border: 1px solid #ddd;
+	animation: focus-wave 1.5s ease-out infinite;
+}
+
+@media only screen and (max-width: 770px) {
+	.page {
+		background-color: #f0f0f0;
+	}
+}

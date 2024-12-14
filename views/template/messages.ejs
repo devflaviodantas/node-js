@@ -1,0 +1,10 @@
+<% if (typeof message !== 'undefined' && message.length > 0) { %>
+<div class="alert2 alert2--<%= typeof alert_type !== 'undefined' ? alert_type : 'error' %> display-none" id="warning-confirm" style="display: block">
+  <div class="alert2-icon"><i class="<%= typeof alert_icon !== 'undefined' ? alert_icon : 'las la-bell' %>"></i></div>
+  <div class="alert2-body">
+    <% message.forEach(messages => { %>
+    <p><%- messages %></p>
+    <% }) %>
+  </div>
+</div>
+<% } %>

@@ -1,0 +1,138 @@
+<%- include('../template/header', { title: 'Nova Doação // '+settings.server }) %> <%- include('../template/navbar') %>
+
+<div class="container">
+	<div class="row mt-4">
+		<div class="col-md-8">
+			<div class="online">
+				<h2 class="text-center font-1 mt-2 mb-0">Nova Doação</h2>
+				<p class="text-center">Digite ou escolha valor da sua doação</p>
+
+				<% if (settings.bonus > 0 || settings.bonus_additional) { %>
+				<div class="alert alert-donate">
+					<% if (settings.bonus > 0) { %>
+					<p class="m-0">Aproveite os <span class="badge bg-primary"><%= settings.bonus %>%</span> a mais de bonificação sobre suas doações</p>
+					<% } %>
+				</div>
+				<% } %>
+
+				<div class="donate-container mt-4">
+					<div class="d-flex flex-column flex-sm-row g-0">
+						<div class="p-2 flex-sm-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text font-1" id="basic-addon1"><%= req.session.user.currency %></span>
+							</div>
+						</div>
+
+						<div class="p-2 flex-sm-grow-1">
+							<input type="text" class="form-control fc-right font-1 text-center" id="set_value" name="set_value" placeholder="Valor" autofocus />
+							<input type="hidden" id="value" name="value" />
+						</div>
+					</div>
+					<p class="m-0 p-0 text-center text-danger" id="error"></p>
+				</div>
+
+				<div class="text-center text-muted mb-3 mt-4" id="donate-info"></div>
+
+				<div id="donate-main" class="mb-3 mt-2 display-none">
+					<p class="text-center text-muted">Doando <span id="get_value"></span> você recebe:</p>
+					<div class="d-flex justify-content-center">
+						<div class="text-center w-50" id="gold_container">
+							<div>
+								<div class="text-muted mb-1">Gold</div>
+								<img src="/images/icons/gold/1.png" width="75" title="Gold" id="image_gold" />
+							</div>
+							<div class="mt-1"><del id="gold_normal_bonus"></del></div>
+							<div class="mt-1"><del id="gold_additional_bonus"></del></div>
+							<h3 id="gold">0</h3>
+						</div>
+						<div class="text-center w-50" id="diamond_container">
+							<div>
+								<div class="text-muted mb-1">Diamantes</div>
+								<img src="/images/diamond.gif" width="75" title="Diamantes" />
+							</div>
+							<div class="mt-1"><del id="diamond_normal_bonus"></del></div>
+							<div class="mt-1"><del id="diamond_additional_bonus"></del></div>
+							<h3 id="diamond">0</h3>
+						</div>
+					</div>
+					<div class="text-center mt-3 text-muted" id="additional_bonus_message"></div>
+					<div class="text-center text-muted mb-3" id="bonus-message"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="online">
+				<h5 class="font-1">Minhas doações</h5>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/js/plugins/mask-money.js"></script>
+<script src="/js/donate.js"></script>
+<script>
+	const currency = "<%= req.session.user.currency %>";
+	const bonus = parseFloat("<%= settings.bonus %>");
+	const goldRates = {
+		BRL: parseFloat("<%= settings.gold_brl %>"),
+		USD: parseFloat("<%= settings.gold_usd %>"),
+		EUR: parseFloat("<%= settings.gold_eur %>"),
+	};
+	const diamondRates = {
+		BRL: parseFloat("<%= settings.diamond_brl %>"),
+		USD: parseFloat("<%= settings.diamond_usd %>"),
+		EUR: parseFloat("<%= settings.diamond_eur %>"),
+	};
+
+	const bonus_additional = { <%= settings.bonus_additional %> };
+
+	function generateBonusMessage(bonusAdditional) {
+		let message = "<ul>";
+		for (const [amount, percentage] of Object.entries(bonusAdditional)) {
+			message += `<li>Doando ${amount} ${currency} seu novo bônus vai ser <span class="badge bg-primary">${bonus + percentage}%</span></li>`;
+		}
+		message += "</ul>";
+		return message;
+	}
+
+	$(document).ready(function () {
+		const bonusMessage = generateBonusMessage(bonus_additional);
+		if (bonusMessage) {
+			$(".alert-donate").append(bonusMessage).show();
+		}
+	});
+	let donateInfoText = 'Doando <span class="badge bg-primary">1.00 ' + currency + "</span> você recebe ";
+	let showAnd = false;
+
+	if (goldRates[currency] > 0) {
+		const goldWithBonus = goldRates[currency] * (1 + bonus / 100);
+		donateInfoText += '<img src="/images/icons/gold/1.png" width="20" />';
+		if (bonus > 0) {
+			donateInfoText += " <del>" + goldRates[currency] + "</del>";
+		}
+		donateInfoText += " " + goldWithBonus + " Gold";
+		showAnd = true;
+	}
+
+	if (diamondRates[currency] > 0) {
+		const diamondsWithBonus = diamondRates[currency] * (1 + bonus / 100);
+		if (showAnd) {
+			donateInfoText += " e ";
+		}
+		if (bonus > 0) {
+			donateInfoText += "<del>" + diamondRates[currency] + "</del> ";
+		}
+		donateInfoText += '<img src="/images/diamond.gif" width="20" /> ' + diamondsWithBonus + " Diamantes";
+	}
+
+	$("#donate-info").html(donateInfoText);
+</script>
+
+<% if (settings.theme == 'light') { %>
+<style>
+	.form-control,
+	.form-control:focus {
+		background-color: #fff;
+	}
+</style>
+<% } %> <%- include('../template/footer') %>

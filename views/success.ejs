@@ -1,0 +1,24 @@
+<%- include('template/header', { title: settings.server }) %>
+<div class="container">
+	<div class="offline">
+		<div class="page">
+			<div class="logo">
+				<a href="/"><img src="/images/logo-<%- settings.theme %>.png" id="logo" /></a>
+			</div>
+			<%- include('template/messages') %> <% if (typeof download !== 'undefined') { %>
+			<div class="alert2">
+				<div class="alert2-icon"><i class="las la-download"></i></div>
+				<div class="alert2-body">
+					<p>
+						Acabamos de enviar um e-mail com os dados da sua nova conta. Se preferir, você pode <a href="/temp/<%- download %>.txt" download>clicar aqui</a> para fazer o download e salvar em um local
+						seguro em seu dispositivo
+					</p>
+				</div>
+			</div>
+			<% } %>
+
+			<a href="/"><i class="las la-arrow-alt-circle-left"></i> Página Inicial</a>
+		</div>
+	</div>
+</div>
+<%- include('template/footer') %>

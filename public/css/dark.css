@@ -1,0 +1,134 @@
+a {
+	color: rgb(166, 166, 166);
+}
+
+label {
+	color: rgb(229, 229, 229);
+}
+
+.content {
+	background-color: #18191a;
+}
+
+.package {
+	background-color: #242424;
+	color: #ffffff;
+}
+
+.package .diamond {
+	color: #0381ff;
+}
+
+.package .gold {
+	color: #ffb228;
+}
+
+.page {
+	background: rgba(29, 29, 29, 0.8);
+}
+
+.link i {
+	color: #4e7ccd;
+}
+
+.link h6 {
+	color: #cecece;
+}
+
+.link p {
+	color: #727272;
+}
+
+.link:hover {
+	border-bottom: 2px inset rgba(78, 124, 205, 0.5);
+	padding-left: 1px;
+	padding-top: 7px;
+}
+
+.password-toggle:hover {
+	color: #2769e1;
+}
+
+.button {
+	background-color: #2769e1;
+	color: rgb(245, 245, 245);
+}
+
+.button:hover {
+	background-color: #1159df;
+}
+
+.error-message {
+	color: #c75555;
+}
+
+.email-warning {
+	color: rgb(187, 187, 187);
+	border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.set-value {
+	border-color: #2b2a2a;
+}
+
+.reward,
+.reward-qtd {
+	color: #fff;
+}
+
+.online,
+.dashboard-card {
+	border-bottom: 1px solid #ddd;
+	background-color: #252525;
+}
+
+.form-control,
+.form-select {
+	background-color: rgba(37, 37, 37, 0.6);
+	color: #fff;
+	border-color: #636363;
+}
+
+.form-control:focus {
+	background-color: rgba(37, 37, 37, 0.8);
+	border-color: #777;
+	color: #fff;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.form-floating > label {
+	color: #ccc;
+}
+
+.form-control::placeholder {
+	color: #bbb;
+}
+
+.navbar {
+	border-bottom: 1px solid #2c2c2c;
+	background-color: #252525;
+	box-shadow: 0 2px 50px rgb(177 177 177 / 20%);
+}
+
+.nav-item .nav-link {
+	border-right: 1px solid #2c2c2c;
+	color: #fff;
+}
+
+.nav-item .nav-link span,
+.navbar-user-details,
+.form-select {
+	color: #c5c5c5;
+}
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover {
+	background-color: rgba(29, 29, 29, 0.9);
+}
+
+@media only screen and (max-width: 770px) {
+	.page {
+		background-color: #1d1d1d;
+	}
+}

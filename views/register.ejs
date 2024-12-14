@@ -1,0 +1,111 @@
+<%- include('template/header', { title: 'Cadastro // '+settings.server }) %>
+<div class="container">
+	<div class="offline">
+		<div class="page">
+			<div class="logo">
+				<a href="/"><img src="/images/logo-<%- settings.theme %>.png" id="logo" /></a>
+			</div>
+			<% if (settings.register) { %> <%- include('template/messages') %>
+			<form action="/register" method="post" class="padding">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="truename" name="truename" placeholder="Nome completo" value="<%= typeof truename !== 'undefined' ? truename : '' %>" autofocus />
+					<label for="truename">Nome completo</label>
+				</div>
+
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value="<%= typeof email !== 'undefined' ? email : '' %>" />
+					<label for="email">E-mail</label>
+				</div>
+
+				<% if (settings.confirm_email) { %>
+				<div class="alert2 alert2--info email-warning mt-3 mb-2">
+					<div class="alert2-icon p-2"><i class="las la-bell"></i></div>
+					<div class="alert2-body p-2">
+						<p class="m-0">Enviaremos o link de ativação para o e-mail informado acima</p>
+					</div>
+				</div>
+				<% } %>
+
+				<div class="<%= typeof message !== 'undefined' ? message : 'display-none' %> mt-3" id="account-fields">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="username" name="username" placeholder="Login" value="<%= typeof username !== 'undefined' ? username : '' %>" />
+						<label for="username">Login</label>
+					</div>
+
+					<div class="form-floating mb-3 position-relative">
+						<input type="password" class="form-control" name="password" id="password" placeholder="Senha" />
+						<label for="password">Senha</label>
+						<span class="password-toggle"><i class="las la-lock"></i></span>
+					</div>
+
+					<% if (settings.captcha) { %>
+					<div class="cf-turnstile" data-sitekey="<%- settings.site_key %>"></div>
+					<% } %>
+					<div class="form-check mt-1">
+						<input class="form-check-input" type="checkbox" value="" name="terms_rules" id="terms_rules" />
+						<label class="form-check-label" for="terms_rules"> Li e concordo com os <a href="<%- settings.terms_rules %>" target="_blank">termos e regras</a> do servidor</label>
+					</div>
+				</div>
+
+				<% if (settings.register_rewards) { %>
+				<div class="reward mb-2">
+					<h5 class="reward-title">Recompensa<%= rewards.length > 1 ? 's' : '' %></h5>
+					<div class="d-flex flex-wrap justify-content-center">
+						<% rewards.forEach(reward => { %>
+						<div class="reward-item mt-3" data-toggle="tooltip" data-html="true" title="<%= reward.name %><% if (reward.type === 'item') { %> (<%= reward.count %>)<% } %><br><%= reward.desc %>">
+							<div class="position-relative">
+								<% if (reward.type === "item") { %>
+								<img src="/upload/<%= reward.icon %>" class="reward-icon" />
+								<% } else if (reward.type === "gold") { %>
+								<img src="/images/icons/gold/1.png" width="35" class="reward-icon" />
+								<% } else if (reward.type === "diamond") { %>
+								<img src="/images/diamond.gif" width="35" class="reward-icon" />
+								<% } %>
+								<div class="position-absolute reward-qtd"><%= reward.count %></div>
+							</div>
+						</div>
+						<% }) %>
+					</div>
+				</div>
+				<% } %>
+
+				<button type="submit" class="button btn btn-primary mt-2">Criar conta</button>
+			</form>
+			<% } else { %>
+			<div class="padding pt-4">
+				<div class="alert alert-error">
+					<p>A criação de novas contas está temporariamente indisponível<br />Contate nosso suporte ou tente novamente mais tarde.</p>
+				</div>
+			</div>
+			<% } %>
+			<div class="row mt-3">
+				<div class="col-md-6 p-0 center-div">
+					<a href="/login" class="text-decoration-none">
+						<div class="link">
+							<i class="las la-sign-in-alt"></i>
+							<div>
+								<h6>Já tem uma conta?</h6>
+								<p>Faça login agora mesmo</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<% if (settings.confirm_email) { %>
+				<div class="col-md-6 p-0 center-div">
+					<a href="/resend" class="text-decoration-none">
+						<div class="link">
+							<i class="las la-envelope"></i>
+							<div>
+								<h6>Não ativou a conta?</h6>
+								<p>Reenvie o link de ativação</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/js/register.js"></script>
+<%- include('template/footer') %>

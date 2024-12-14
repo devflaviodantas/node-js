@@ -1,0 +1,49 @@
+{
+  "name": "Painel do Jogador",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/public/**"
+    ],
+    "delay": 100
+  },
+  "author": "revoltz.dev",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.41",
+    "@sequelize/mysql": "^7.0.0-alpha.41",
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-minify-html": "^0.12.0",
+    "express-session": "^1.18.0",
+    "i18next": "^23.11.5",
+    "i18next-express-middleware": "^2.0.0",
+    "i18next-fs-backend": "^2.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql3": "^0.6.0",
+    "node-cache": "^5.1.2",
+    "nodemailer": "^6.9.14",
+    "obfuscate-mail": "^1.5.1",
+    "random-word-slugs": "^0.1.7",
+    "redis": "^4.6.14",
+    "reloadsite": "^1.0.9",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}

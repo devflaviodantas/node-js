@@ -1,0 +1,53 @@
+<%- include('template/header', { title: 'Login // '+settings.server }) %>
+<div class="container">
+	<div class="offline">
+		<div class="page">
+			<div class="logo">
+				<a href="/"><img src="/images/logo-<%- settings.theme %>.png" id="logo" /></a>
+			</div>
+			<%- include('template/messages') %>
+			<form action="/login" method="post" id="loginForm">
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="username" name="username" placeholder="Login" value="<%= typeof username !== 'undefined' ? username : '' %>" autofocus />
+					<label for="username">Login</label>
+				</div>
+
+				<div class="form-floating mb-3 position-relative">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Senha" />
+					<label for="password">Senha</label>
+					<span class="password-toggle"><i class="las la-lock"></i></span>
+				</div>
+
+				<% if (settings.captcha) { %>
+				<div class="cf-turnstile" data-sitekey="<%- settings.site_key %>"></div>
+				<% } %>
+				<button type="submit" class="button btn btn-primary mt-2">Fazer Login</button>
+			</form>
+			<div class="row mt-3">
+				<div class="col-md-6 p-0 center-div">
+					<a href="/register" class="text-decoration-none">
+						<div class="link">
+							<i class="las la-user-circle"></i>
+							<div>
+								<h6>Ainda não é membro?</h6>
+								<p>Crie sua conta agora!</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 p-0 center-div">
+					<a href="/recover" class="text-decoration-none">
+						<div class="link">
+							<i class="las la-key"></i>
+							<div>
+								<h6>Esqueceu sua senha?</h6>
+								<p>Clique aqui e recupere</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('template/footer') %>

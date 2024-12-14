@@ -1,0 +1,18 @@
+<%- include('template/header', { title: page + ' // '+settings.server }) %>
+<div class="container">
+	<div class="offline">
+		<div class="page">
+			<div class="logo text-center">
+				<a href="/"><img src="/images/logo-<%- settings.theme %>.png" id="logo" /></a>
+			</div>
+			<h3 class="text-center text-uppercase">Error 404</h3>
+			<p class="font-weight-normal text-center mb-3" id="desc">A página <%= page %> não existe ou está indisponível</p>
+			<div class="links text-center">
+				<a href="/" class="btn btn-primary">
+					<p>Voltar</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('template/footer') %>

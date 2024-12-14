@@ -1,0 +1,45 @@
+[2024-09-30T12:17:55.590Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:17:55.604Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:17:55.670Z] [ERROR] Não foi possível conectar-se ao banco de dados localhost.node-js: SequelizeConnectionRefusedError
+[2024-09-30T12:17:55.673Z] [ERROR] Não foi possível conectar-se ao banco de dados localhost.pw: SequelizeConnectionRefusedError
+[2024-09-30T12:18:04.571Z] [ERROR] Erro ao buscar dados: 
+[2024-09-30T12:18:04.626Z] [ERROR] Erro ao buscar dados: 
+[2024-09-30T12:21:01.127Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:21:01.139Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:21:01.256Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:21:01.260Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T12:34:32.494Z] [ERROR] Erro ao buscar dados: Unknown column 'gold_usd' in 'field list'
+[2024-09-30T12:35:51.998Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:35:52.008Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:35:52.088Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T12:35:52.090Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:39:52.111Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:39:52.121Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:39:52.200Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T12:39:52.203Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:40:02.004Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:40:02.017Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:40:02.147Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:40:02.156Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T12:40:19.027Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:40:19.037Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:40:19.127Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T12:40:19.128Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:40:36.786Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T12:40:36.798Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T12:40:36.879Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T12:40:36.880Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T13:16:05.081Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T13:16:05.091Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T13:16:05.178Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T13:16:05.179Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T13:16:05.274Z] [ERROR] Erro ao buscar dados: Unknown column 'default_currency' in 'field list'
+[2024-09-30T13:16:05.296Z] [ERROR] Erro ao buscar dados: Unknown column 'default_currency' in 'field list'
+[2024-09-30T13:29:28.580Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor, mas desanimei. até breve(?)
+[2024-09-30T13:29:28.590Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T13:29:28.703Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T13:29:28.706Z] [SUCCESS] Banco de dados localhost.pw conectado
+[2024-09-30T13:29:37.683Z] [SUCCESS] Oi eu do futuro, parei na página views/donate/main estava fazendo o front da doação, com sistema de multi-moedas e uma nova função de bônus a partir de X valor
+[2024-09-30T13:29:37.693Z] [SUCCESS] Aplicativo iniciado na porta 8080
+[2024-09-30T13:29:37.771Z] [SUCCESS] Banco de dados localhost.node-js conectado
+[2024-09-30T13:29:37.772Z] [SUCCESS] Banco de dados localhost.pw conectado
